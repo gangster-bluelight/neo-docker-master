@@ -39,9 +39,9 @@ public abstract class ResultCallbackTemplate<RC_T extends com.github.dockerjava.
 
     @Override
     public void onError(Throwable throwable) {
-
-        if (closed) return;
-
+        if (closed) {
+            return;
+        }
         if (this.firstError == null) {
             this.firstError = throwable;
         }
